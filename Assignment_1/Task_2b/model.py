@@ -27,5 +27,6 @@ def test():
 
     print(model)
     print(out)
+    print(torch.argmax(out).float())
 
-test()
+#test()
