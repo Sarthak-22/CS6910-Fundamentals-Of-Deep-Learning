@@ -26,6 +26,6 @@ def test():
     print(train_image)
     print(train_label)
 
-#test()
+test()
 
         

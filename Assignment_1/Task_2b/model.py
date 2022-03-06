@@ -9,7 +9,7 @@ class Image_Classification(nn.Module):
         self.linear2 = nn.Linear(in_features=30, out_features=15)
         self.linear3 = nn.Linear(in_features=15, out_features=8)
         self.tanh = nn.Tanh()
-        self.softmax = nn.Softmax()
+        self.softmax = nn.Softmax(dim=0)
 
 
     def forward(self, x):
