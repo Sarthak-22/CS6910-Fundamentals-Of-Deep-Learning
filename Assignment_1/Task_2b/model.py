@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 class Image_Classification(nn.Module):
     def __init__(self):
@@ -16,7 +17,8 @@ class Image_Classification(nn.Module):
 
         x = self.tanh(self.linear1(x))
         x = self.tanh(self.linear2(x))
-        x = self.softmax(self.linear3(x))
+        #x = self.softmax(self.linear3(x))
+        x = F.softmax(self.linear3(x))
 
         return x
 
