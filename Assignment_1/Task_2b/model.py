@@ -18,7 +18,7 @@ class Image_Classification(nn.Module):
         x = self.tanh(self.linear1(x))
         x = self.tanh(self.linear2(x))
         #x = self.softmax(self.linear3(x))
-        x = F.softmax(self.linear3(x))
+        x = self.linear3(x)
 
         return x
 
