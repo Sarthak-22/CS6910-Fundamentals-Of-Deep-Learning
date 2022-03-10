@@ -8,7 +8,7 @@ criterion = nn.BCELoss()
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 batch_size = 1
-epochs = 300
+epochs = 360
 
 trainDataset = Task2aDataset("dataset/train_t25.csv")
 trainLoader  = torch.utils.data.DataLoader(trainDataset, batch_size=batch_size,
@@ -41,12 +41,15 @@ for epoch in range(epochs):
         labels = labels.unsqueeze(1)
         loss = criterion(outputs,labels)
         total_loss += loss.item()
+    
 
         
 
        
         loss.backward()
         optimizer.step()
+    if(epoch+1 == 1 or epoch+1==2 or epoch+1==10 or epoch+1==50 or epoch+1==epochs):
+        torch.save(model.state_dict(), "epoch"+str(epoch+1)+".pt")
     print("Epoch Average Loss: ", total_loss/(cnt))
 
 torch.save(model.state_dict(), "weights.pt")
