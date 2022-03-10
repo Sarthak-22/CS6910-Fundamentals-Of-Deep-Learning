@@ -7,7 +7,7 @@ from matplotlib import cm
 
 from dataset import Task2aDataset
 
-epochs = [360]
+epochs = [1,2,10,50,360]
 
 def gen_plots(model,name):
     x1 = np.arange(-20,20,0.25,dtype="float32")
