@@ -22,14 +22,14 @@ def accuracy(loader, model):
     num_labels = 0
 
     with torch.no_grad():
-        for image, label in loader:
+        for data, target in loader:
             model.eval()
-            image = image.to(device=device)
-            label = label.to(device=device)
+            data = data.to(device=device)
+            target = target.to(device=device)
 
-            out = model(image)
-            preds = torch.argmax(out)
-            num_correct_labels += (preds==label)
+            out = model(data)
+
+            num_correct += ()
             num_labels += 1
 
         print(f"Accuracy of the trained model is {float(num_correct_labels/num_labels)*100:.2f} %")

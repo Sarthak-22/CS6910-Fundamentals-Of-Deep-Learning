@@ -2,14 +2,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class function_approximation(nn.Module):
     def __init__(self):
         super(function_approximation, self).__init__()
 
-        self.linear1 = nn.Linear(in_features=2, out_features=2)
-        self.linear2 = nn.Linear(in_features=2, out_features=2)
+        self.linear1 = nn.Linear(in_features=2, out_features=4, bias=True)
+        self.linear2 = nn.Linear(in_features=4, out_features=4)
         self.linear3 = nn.Linear(in_features=2, out_features=1)
-        self.tanh = nn.Tanh()
+        self.tanh    = nn.Tanh()
         self.softmax = nn.Softmax(dim=0)
 
 
