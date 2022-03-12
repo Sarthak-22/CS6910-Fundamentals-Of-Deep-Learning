@@ -22,6 +22,12 @@ class Image_Classification(nn.Module):
 
         return x
 
+def weights_init(m):
+    if isinstance(m, nn.Linear):
+        torch.manual_seed(768)
+        nn.init.xavier_uniform_(m.weight.data)
+        nn.init.zeros_(m.bias.data)
+
 def test():
     model = Image_Classification()
     input = torch.randn([60])

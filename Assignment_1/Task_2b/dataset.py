@@ -1,7 +1,9 @@
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, random_split
 import numpy as np
 import torch
 
+train_image_dir = 'dataset/image_data_dim60.txt'
+train_label_dir = 'dataset/image_data_labels.txt'
 
 class Image_Dataset(Dataset):
     def __init__(self, image_dir, label_dir):
@@ -19,12 +21,23 @@ class Image_Dataset(Dataset):
 
         return (img_index, label_index)
 
+
+dataset = Image_Dataset(image_dir=train_image_dir, label_dir=train_label_dir)
+
+# 70-20-10 train-dev-test split
+train_size = int(0.7*len(dataset))
+val_size = int(0.2*len(dataset))
+test_size = len(dataset) - train_size - val_size
+train_dataset, val_dataset, test_dataset = random_split(dataset, [train_size, val_size, test_size], generator=torch.Generator().manual_seed(42))
+
+
 def test():
-    train_dataset = Image_Dataset(image_dir='dataset/image_data_dim60.txt', label_dir='dataset/image_data_labels.txt')
-    train_image, train_label = train_dataset[5]
+    dataset = Image_Dataset(image_dir='dataset/image_data_dim60.txt', label_dir='dataset/image_data_labels.txt')
+    train_image, train_label = dataset[5]
     
     print(train_image)
     print(train_label)
+    
 
 #test()
 
