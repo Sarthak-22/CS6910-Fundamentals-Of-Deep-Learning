@@ -8,6 +8,7 @@ from matplotlib import cm
 from dataset import Task2aDataset
 
 epochs = [1,2,10,50,360]
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 def gen_plots(model,name):
     x1 = np.arange(-20,20,0.25,dtype="float32")
@@ -44,51 +45,85 @@ def gen_plots(model,name):
 
             y[i][j]= output[0]
 
-   
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl11, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl11.png")
-    plt.close()
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl12, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl12.png")
-    plt.close()
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl13, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl13.png")
-    plt.close()
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl14, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl14.png")
-    plt.close()
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl21, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl21.png")
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, hl22, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_hl22.png")
-    plt.close()
+    plt.close(f)
 
+    f = plt.figure()
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     surf = ax.plot_surface(x1, x2, y, cmap=cm.coolwarm,linewidth=0, antialiased=False)
     plt.savefig(name+"_output.png")
-    plt.close()
+    plt.close(f)
 
 
-
-
-
-
-        
-for epoch in epochs:
+def create_decision_plot(name):
     model = FFNN()
-    model.load_state_dict(torch.load(f"epoch{str(epoch)}.pt"))
+    model.load_state_dict(torch.load(f"weights.pt",map_location=device))
+    
+    x1 = np.arange(-20,20,0.25,dtype="float32")
+    x2 = np.arange(-20,20,0.25,dtype="float32")
+    x1,x2 = np.meshgrid(x1,x2)
+    y = np.zeros(x1.shape)
+    for i in range(x1.shape[0]):
+        for j in range(x1.shape[1]):
+            
+            output = model(torch.tensor([x1[i][j],x2[i][j]]))
+        
+
+            if(output[0] > 0.5):
+                y[i][j] = 1.0
+            else:
+                y[i][j] = 0.0
+    f = plt.figure()
+    plt.contourf(x1,x2,y)
+    plt.colorbar()
+    plt.savefig(name+"decision.png")
+    plt.close(f)
+    
+
+
+
+
+for epoch in epochs:
+    
+    model = FFNN()
+    model.load_state_dict(torch.load(f"epoch{str(epoch)}.pt",map_location=device))
     gen_plots(model,"plots/epoch"+str(epoch))
+       
+
+create_decision_plot("plots/")
 
 
 
