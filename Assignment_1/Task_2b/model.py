@@ -6,9 +6,9 @@ class Image_Classification(nn.Module):
     def __init__(self):
         super(Image_Classification, self).__init__()
 
-        self.linear1 = nn.Linear(in_features=60, out_features=30)
-        self.linear2 = nn.Linear(in_features=30, out_features=15)
-        self.linear3 = nn.Linear(in_features=15, out_features=8)
+        self.linear1 = nn.Linear(in_features=60, out_features=60)
+        self.linear2 = nn.Linear(in_features=60, out_features=30)
+        self.linear3 = nn.Linear(in_features=30, out_features=8)
         self.tanh = nn.Tanh()
         self.softmax = nn.Softmax(dim=0)
 

@@ -18,7 +18,7 @@ args = parser.parse_args()
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 batch_size = 1
-learning_rate = 1e-3
+learning_rate = 1e-5
 epochs = 300
 weight_update = args.weight_update
 
@@ -89,17 +89,17 @@ for epoch in range(epochs):
     avg_val_losses.append(avg_val_loss)
     print(f'Epochs:{epoch+1}, Average Train Loss:{avg_train_loss}, Average Validation Loss:{avg_val_loss}')
 
+    if (epoch%10==0):
+        if weight_update=='generalized_delta':
+            torch.save(model.state_dict(), 'model_weights_generalized_delta.pth')
+
+        if weight_update=='delta':
+            torch.save(model.state_dict(), 'model_weights_delta.pth')
+
+        if weight_update=='adam':
+            torch.save(model.state_dict(), 'model_weights_adam.pth')
 
 
-
-if weight_update=='generalized_delta':
-    torch.save(model.state_dict(), 'model_weights_generalized_delta.pth')
-
-if weight_update=='delta':
-    torch.save(model.state_dict(), 'model_weights_delta.pth')
-
-if weight_update=='adam':
-    torch.save(model.state_dict(), 'model_weights_adam.pth')
 
 
 plt.figure()
