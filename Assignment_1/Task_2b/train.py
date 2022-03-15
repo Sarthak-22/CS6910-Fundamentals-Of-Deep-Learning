@@ -2,13 +2,11 @@ import torch
 import argparse
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader
 from dataset import train_dataset, val_dataset
 from model import Image_Classification, weights_init
 import matplotlib.pyplot as plt
 
-tb = SummaryWriter()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("weight_update", help="Enter the weight update rule", type=str)
@@ -18,8 +16,8 @@ args = parser.parse_args()
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 batch_size = 1
-learning_rate = 1e-5
-epochs = 300
+learning_rate = 3e-6
+epochs = 450
 weight_update = args.weight_update
 
 
@@ -67,7 +65,6 @@ for epoch in range(epochs):
         optimizer.step()
 
     avg_train_loss = avg_train_loss/count
-    tb.add_scalar("Train Loss", avg_train_loss, epoch+1)
     avg_train_losses.append(avg_train_loss)
 
 
