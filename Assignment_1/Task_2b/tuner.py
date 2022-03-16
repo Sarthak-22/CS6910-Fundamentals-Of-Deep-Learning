@@ -21,7 +21,7 @@ scheduler = ASHAScheduler(
         reduction_factor=2)
 
 result = tune.run(
-        tune.with_parameters(train(config, weight_update='generalized_delta')),
+        tune.with_parameters(train),
         resources_per_trial={"cpu": 1, "gpu": 1},
         config=config,
         metric="loss",

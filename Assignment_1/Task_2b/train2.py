@@ -8,7 +8,7 @@ import os
 from ray import tune
 
 
-def train(config, weight_update, checkpoint_dir=None, epochs=400):
+def train(config, weight_update='generalized_delta', checkpoint_dir=None, epochs=400):
     model = Image_Classification(config["l1"], config["l2"])
     model.apply(weights_init)
 
@@ -36,8 +36,8 @@ def train(config, weight_update, checkpoint_dir=None, epochs=400):
         model.load_state_dict(model_state)
         optimizer.load_state_dict(optimizer_state)
 
-    train_loader = DataLoader(dataset=train_dataset, batch_size=1, shuffle=True, num_workers=8)
-    val_loader = DataLoader(dataset=val_dataset, batch_size=1, shuffle=True, num_workers=8)
+    train_loader = DataLoader(dataset=train_dataset, batch_size=1, shuffle=True, num_workers=2)
+    val_loader = DataLoader(dataset=val_dataset, batch_size=1, shuffle=True, num_workers=2)
 
 
 
