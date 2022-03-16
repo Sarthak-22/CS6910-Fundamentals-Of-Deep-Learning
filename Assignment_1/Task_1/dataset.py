@@ -25,9 +25,11 @@ def test():
     train_dataset = function_dataset(data_dir='dataset/func_app1.csv')
     train_data, train_label = train_dataset[5]
     
-    print(train_data)
-    print(train_label)
-    print(train_data.shape)
-    print(train_label.shape)
+    # print(train_data)
+    # print(train_label)
+    # print(train_data.shape)
+    # print(train_label.shape)
+
+    print(train_dataset[:][0][:,0].shape)
 
 #test()
