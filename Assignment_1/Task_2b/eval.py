@@ -5,6 +5,7 @@ from dataset import train_dataset, val_dataset#, test_dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 import argparse
+from tuner import config
 
 parser = argparse.ArgumentParser()
 parser.add_argument("weight_update", help="Enter the weight update rule", type=str)
@@ -20,7 +21,7 @@ val_loader = DataLoader(dataset=val_dataset)
 #test_loader = DataLoader(dataset=test_dataset)
 
 
-model = Image_Classification().to(device=device)
+model = Image_Classification(config["l1"], config["l2"]).to(device=device)
 
 if weight_update=='generalized_delta':
     model.load_state_dict(torch.load('model_weights_generalized_delta.pth'))

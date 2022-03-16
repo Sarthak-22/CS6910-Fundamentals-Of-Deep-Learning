@@ -16,8 +16,8 @@ args = parser.parse_args()
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 batch_size = 1
-learning_rate = 3e-6
-epochs = 450
+learning_rate = 1e-4
+epochs = 300
 weight_update = args.weight_update
 
 
@@ -72,15 +72,17 @@ for epoch in range(epochs):
     avg_val_loss = 0
     model.eval()
     for batch_idx, (image, label) in enumerate(val_loader):
-        count += 1
+        with torch.no_grad():
+            count += 1
 
-        image = image.to(device=device)
-        label = label.to(device=device)
+            image = image.to(device=device)
+            label = label.to(device=device)
 
-        out = model(image)
-        loss = criterion(out, label.long())
+            out = model(image)
+            loss = criterion(out, label.long())
 
-        avg_val_loss += loss.item()
+            avg_val_loss += loss.item()
+        
     
     avg_val_loss = avg_val_loss/count
     avg_val_losses.append(avg_val_loss)
