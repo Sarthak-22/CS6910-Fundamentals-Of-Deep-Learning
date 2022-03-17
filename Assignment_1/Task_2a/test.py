@@ -18,6 +18,11 @@ for line in lines[1:]:
     print(c)
     outputs.append(model(c).item())
 
-with open("test_output.txt","w") as f:
-    for output in outputs:
-        f.write(f"{output}\n")
+with open("test_output.csv","w") as f:
+    f.write(lines[0].strip()+",label\n")
+    for i,output in enumerate(outputs):
+        if(output>0.5):
+            output = 1.0
+        else:
+            output = 0.0
+        f.write(f"{lines[i+1].strip()},{output}\n")
