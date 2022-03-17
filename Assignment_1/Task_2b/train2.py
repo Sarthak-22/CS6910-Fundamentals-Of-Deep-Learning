@@ -8,7 +8,7 @@ import os
 from ray import tune
 
 
-def train(config, weight_update='generalized_delta', checkpoint_dir=None, epochs=400):
+def train_tune(config, weight_update='generalized_delta', checkpoint_dir=None, epochs=400):
     model = Image_Classification(config["l1"], config["l2"])
     model.apply(weights_init)
 

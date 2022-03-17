@@ -5,7 +5,7 @@ from dataset import train_dataset, val_dataset#, test_dataset
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 import argparse
-from tuner import config
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("weight_update", help="Enter the weight update rule", type=str)
@@ -21,7 +21,7 @@ val_loader = DataLoader(dataset=val_dataset)
 #test_loader = DataLoader(dataset=test_dataset)
 
 
-model = Image_Classification(config["l1"], config["l2"]).to(device=device)
+model = Image_Classification().to(device=device)
 
 if weight_update=='generalized_delta':
     model.load_state_dict(torch.load('model_weights_generalized_delta.pth'))
@@ -76,14 +76,14 @@ y_pred_val, y_val = accuracy(val_loader, model)
 # print(y_pred_train, y_train)
 
 cm_train = confusion_matrix(y_train, y_pred_train)
-disp1 = ConfusionMatrixDisplay(confusion_matrix=cm_train ,display_labels=['coast', 'forest', 'highway', 'insidecity', 'mountain', 'opencountry', 'street', 'tallbuilding'])
+disp1 = ConfusionMatrixDisplay(confusion_matrix=cm_train ,display_labels=['coast', 'forest', 'opencountry', 'street', 'tallbuilding'])
 disp1.plot()
 plt.savefig(f"plots/cm_train_{weight_update}.png")
 plt.show()
 
 
 cm_val = confusion_matrix(y_val, y_pred_val)
-disp2 = ConfusionMatrixDisplay(confusion_matrix=cm_val ,display_labels=['coast', 'forest', 'highway', 'insidecity', 'mountain', 'opencountry', 'street', 'tallbuilding'])
+disp2 = ConfusionMatrixDisplay(confusion_matrix=cm_val ,display_labels=['coast', 'forest','opencountry', 'street', 'tallbuilding'])
 disp2.plot()
 plt.savefig(f"plots/cm_val_{weight_update}.png")
 plt.show()

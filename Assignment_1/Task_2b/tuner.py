@@ -1,6 +1,7 @@
 import numpy as np
 from ray import tune
 from ray.tune.schedulers import ASHAScheduler
+from Assignment_1.Task_2b.train2 import train_tune
 from train2 import train
 import ray
 
@@ -21,7 +22,7 @@ scheduler = ASHAScheduler(
         reduction_factor=2)
 
 result = tune.run(
-        tune.with_parameters(train),
+        tune.with_parameters(train_tune),
         resources_per_trial={"cpu": 1, "gpu": 1},
         config=config,
         metric="loss",

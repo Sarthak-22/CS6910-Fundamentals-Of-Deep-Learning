@@ -1,8 +1,8 @@
-coast
-forest
+coast 
+forest 
 highway
 insidecity
 mountain
-opencountry
-street
-tallbuilding
+opencountry 
+street 
+tallbuilding  
