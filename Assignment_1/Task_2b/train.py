@@ -17,7 +17,7 @@ args = parser.parse_args()
 device = 'cpu'
 batch_size = 1
 learning_rate = 2e-5
-epochs = 150
+epochs = 800
 weight_update = args.weight_update
 
 
