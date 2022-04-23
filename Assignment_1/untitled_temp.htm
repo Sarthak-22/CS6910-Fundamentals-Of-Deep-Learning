@@ -1,0 +1,1736 @@
+
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css"></link>
+      </head>
+      <body> <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <style>
+            
+        </style>
+        <link rel="stylesheet" href="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/normalize.css">
+        <link rel="stylesheet" href="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/main.css">
+        <link rel="stylesheet" href="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/github-min.css">
+        <link rel="stylesheet" href="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/vs.css">
+        <script src="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <article class="markdown-body"><h1 id=. anchor=true>.</h1>
+<h2 id=Contents anchor=true>Contents</h2>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>      /</h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>          /</h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\dataset\dataset_splitpy) anchor=true><a href="#Task_1\dataset\dataset_splitpy">            |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\dataset\readmetxt) anchor=true><a href="#Task_1\dataset\readmetxt">            |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\datasetpy) anchor=true><a href="#Task_1\datasetpy">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\evalpy) anchor=true><a href="#Task_1\evalpy">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\lossestxt) anchor=true><a href="#Task_1\lossestxt">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\modelpy) anchor=true><a href="#Task_1\modelpy">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\plotpy) anchor=true><a href="#Task_1\plotpy">        |- </a></h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>          /</h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\READMEmd) anchor=true><a href="#Task_1\READMEmd">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\trainpy) anchor=true><a href="#Task_1\trainpy">        |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_1\untitledhtml) anchor=true><a href="#Task_1\untitledhtml">        |- </a></h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>          /</h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>      /</h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>          /</h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_2a\plots\gen_latexpy) anchor=true><a href="#Task_2a\plots\gen_latexpy">            |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_2a\plots\latextxt) anchor=true><a href="#Task_2a\plots\latextxt">            |- </a></h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_2a\READMEmd) anchor=true><a href="#Task_2a\READMEmd">        |- </a></h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>          /</h4>
+<h4 id=&nbsp;&nbsp;&nbsp;&nbsp;  / anchor=true>      /</h4>
+<h4 id=[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|- ](#Task_2b\READMEmd) anchor=true><a href="#Task_2b\READMEmd">        |- </a></h4>
+<h4 id=Task_1\dataset\dataset_splitpy anchor=true>Task_1\dataset\dataset_splitpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python">lines = []
+<span class="hljs-keyword">import</span> random
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;func_app1.csv&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:
+    lines = f.readlines()
+random.shuffle(lines[<span class="hljs-number">1</span>:])
+train_lines = lines[<span class="hljs-number">1</span>:<span class="hljs-number">351</span>]
+valid_lines = lines[<span class="hljs-number">351</span>:<span class="hljs-number">401</span>]
+test_lines = lines[<span class="hljs-number">401</span>:<span class="hljs-number">501</span>]
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;train.csv&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+    f.write(lines[<span class="hljs-number">0</span>])
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> train_lines:
+        f.write(line)
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;validation.csv&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+    f.write(lines[<span class="hljs-number">0</span>])
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> valid_lines:
+        f.write(line)
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.csv&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+    f.write(lines[<span class="hljs-number">0</span>])
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> test_lines:
+        f.write(line)
+
+
+
+
+</code></pre>
+<h4 id=Task_1\dataset\readmetxt anchor=true>Task_1\dataset\readmetxt</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-plaintext">Instructions:
+1. The dataset consist of 2 attributes (features ) and 1 Target variable (&#x27;y&#x27; coloumn)
+2. Use 70:10:20 ratio for dividing dataset into Training, Validation and Test datasets,
+respectively
+</code></pre>
+<h4 id=Task_1\datasetpy anchor=true>Task_1\datasetpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> Dataset
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> torch
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">function_dataset</span>(<span class="hljs-params">Dataset</span>):</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, data_dir</span>):</span>
+        self.data_dir = data_dir
+        data = np.array(pd.read_csv(self.data_dir))
+        self.input_features = data[:,<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]
+        self.target = data[:,<span class="hljs-number">2</span>:]
+        self.<span class="hljs-built_in">len</span> = data.shape[<span class="hljs-number">0</span>]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__len__</span>(<span class="hljs-params">self</span>):</span>
+        <span class="hljs-keyword">return</span> self.<span class="hljs-built_in">len</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span>(<span class="hljs-params">self, index</span>):</span>
+        features_index = torch.from_numpy(self.input_features[index])
+        target_index = torch.from_numpy(self.target[index])
+
+        <span class="hljs-keyword">return</span> (features_index, target_index)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span>():</span>
+    train_dataset = function_dataset(data_dir=<span class="hljs-string">&#x27;dataset/func_app1.csv&#x27;</span>)
+    train_data, train_label = train_dataset[<span class="hljs-number">5</span>]
+    
+    <span class="hljs-comment"># print(train_data)</span>
+    <span class="hljs-comment"># print(train_label)</span>
+    <span class="hljs-comment"># print(train_data.shape)</span>
+    <span class="hljs-comment"># print(train_label.shape)</span>
+
+    <span class="hljs-built_in">print</span>(train_dataset[:][<span class="hljs-number">0</span>][:,<span class="hljs-number">0</span>].shape)
+
+<span class="hljs-comment">#test()</span>
+
+</code></pre>
+<h4 id=Task_1\evalpy anchor=true>Task_1\evalpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader
+<span class="hljs-keyword">from</span> model <span class="hljs-keyword">import</span> function_approximation
+<span class="hljs-keyword">from</span> dataset <span class="hljs-keyword">import</span> function_dataset
+
+device = <span class="hljs-string">&#x27;cuda&#x27;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;cpu&#x27;</span>
+
+model = function_approximation().to(device=device)
+model.load_state_dict(torch.load(<span class="hljs-string">&#x27;model_weights.pth&#x27;</span>))
+
+train_dataset = function_dataset(<span class="hljs-string">&quot;dataset/train.csv&quot;</span>)
+train_loader = DataLoader(train_dataset)
+
+test_dataset = function_dataset(<span class="hljs-string">&quot;dataset/test.csv&quot;</span>)
+test_loader = DataLoader(test_dataset)
+
+valid_dataset = function_dataset(<span class="hljs-string">&quot;dataset/validation.csv&quot;</span>)
+valid_loader = DataLoader(valid_dataset)
+
+
+criterion = nn.MSELoss()
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">accuracy</span>(<span class="hljs-params">loader, model</span>):</span>
+
+    
+    
+    avg_loss = <span class="hljs-number">0</span> 
+    cnt=<span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">with</span> torch.no_grad():
+        <span class="hljs-keyword">for</span> data, target <span class="hljs-keyword">in</span> loader:
+            model.<span class="hljs-built_in">eval</span>()
+            data = data.to(device=device)
+            target = target.to(device=device)
+
+            out = model(data.<span class="hljs-built_in">float</span>())
+
+            loss = criterion(out,target.<span class="hljs-built_in">float</span>())
+            avg_loss += loss
+            cnt+=<span class="hljs-number">1</span>
+        avg_loss = avg_loss/cnt
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Average loss is: <span class="hljs-subst">{avg_loss:<span class="hljs-number">.2</span>f}</span>&quot;</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;--------------------------------------------------------------------------------&quot;</span>)
+
+   
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Train Set metrics:&quot;</span>)
+accuracy(train_loader, model)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Test Set metrics:&quot;</span>)
+accuracy(test_loader, model)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Validation Set metrics:&quot;</span>)
+accuracy(valid_loader, model)
+</code></pre>
+<h4 id=Task_1\lossestxt anchor=true>Task_1\lossestxt</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-plaintext">6469.233530050202
+6190.931101790555
+5883.22599173581
+5596.877008840678
+5337.303012900877
+5096.645053030872
+4876.540628889288
+4673.263784016394
+4485.531428102436
+4309.3988879548915
+4146.353220651711
+3987.0031177775136
+3829.516704134464
+3681.123870719509
+3543.9201794371556
+3414.6851106210383
+3292.636105643788
+3177.647691678764
+3070.4610155878922
+2965.9298754088622
+2867.3601155916936
+2774.498478832328
+2694.177996311005
+2603.387308492378
+2521.0982459011652
+2443.337388478182
+2370.8838215730025
+2301.8711545321453
+2233.7373368663734
+2169.3944282997318
+2109.1946789035437
+2055.541573732963
+1993.0167484983224
+1939.5745421948652
+1887.184776655118
+1839.7134871945689
+1785.318972255158
+1737.802955423762
+1691.9880374301924
+1646.6264398705248
+1604.67657918612
+1566.084742159608
+1524.8917141796614
+1488.1353378386689
+1454.472732475005
+1416.0973937901178
+1379.5000886839684
+1348.252545587967
+1324.3628492451364
+1284.7427391913982
+1253.8237684101775
+1225.3391876584703
+1203.5136340186652
+1177.3216696710303
+1144.1754839857508
+1119.3987015357463
+1094.4178529508288
+1080.496984217206
+1054.4650020251358
+1039.2800346874399
+1008.5285836884219
+983.8163497786051
+963.5718603893727
+949.1739639355894
+934.6580486254738
+906.531217941231
+906.1871261906234
+879.6276484871689
+852.9956915393046
+841.1800919978019
+851.3361614483795
+815.4862426631918
+799.9278602590776
+824.6835416326386
+781.6744935905969
+744.2075442716854
+730.5548405038672
+720.7871221927024
+859.9738975777743
+710.416381145996
+683.6388357776245
+671.8157706602475
+724.0333896776158
+750.6614222393445
+638.974825054208
+632.4284063589039
+649.1066230627798
+628.7419264671827
+620.1735607577032
+594.3411663187208
+582.6449460217982
+936.8774392072994
+582.7242108148364
+560.0279573015257
+546.6501516908451
+568.5797725175678
+535.9544544666265
+523.5648404347055
+603.1952533671371
+512.3436884481064
+543.158250819989
+494.1990198272382
+480.4194119944332
+479.88865784242785
+466.2169628430863
+460.3482845102381
+466.6578712346125
+447.8757596784238
+440.71759898287075
+507.3802223878073
+493.0428776469179
+459.53285687603557
+421.46058339041474
+493.49286679696957
+413.3387188066945
+455.0380167517763
+394.3975249900304
+405.37982813770515
+405.66303317930965
+375.8381339023152
+390.4244968779601
+560.762610918345
+393.2744989159251
+361.28605227674234
+416.46362678989567
+850.2836444338354
+722.6960697442653
+378.3849656136611
+441.43901904530424
+571.639129097281
+446.9788434070125
+355.9731980279119
+336.6434778124963
+502.03261507384263
+466.89262110671535
+324.4460891909006
+330.60122164947074
+319.20683654695483
+330.96140365741724
+315.07652046248995
+295.16431202245724
+301.55329312171267
+314.59093438132027
+283.69389822118467
+289.13743150582343
+285.4178505116549
+282.6222133276099
+266.80732124255474
+267.6780870162178
+291.72752652252063
+301.0820093975442
+255.27581384248523
+259.9788112715606
+248.1678358188691
+247.82576465584404
+249.85177773775953
+238.83690804060333
+237.84376075852978
+234.83010477759734
+232.88150086698778
+241.4665825629562
+238.91304998723575
+257.20470013668717
+372.62203589990287
+493.4555190832264
+393.2878895050876
+385.1773704841462
+233.59242927069576
+254.4670273237044
+245.38136153316134
+255.1130062484342
+492.55430691985447
+233.57857808862107
+253.35092944511345
+389.3625830391222
+216.27789609335517
+208.30248116201605
+211.16262579406316
+207.89040443449701
+206.84850883944466
+198.50431550655787
+194.45448658280532
+198.5994727563047
+198.29875357995692
+198.07632111843012
+183.3659305442837
+186.22883623649508
+182.5515711999644
+180.4360689515514
+187.28112202723494
+181.74815717757193
+175.8808969745796
+186.7982012160036
+175.13045971957473
+181.03019590565518
+164.97966405628136
+181.23077370730704
+164.31702040442548
+210.1360731847967
+166.073794739594
+172.76358136821835
+158.82834603458153
+154.05531820874063
+153.21897153900238
+146.94612490718507
+150.756915951739
+149.56644956118734
+141.00414647304362
+138.33387086464742
+139.9994198225728
+136.26295039148678
+173.0235070137456
+138.81065704789154
+145.9764013452654
+192.2916841295122
+146.28494609055886
+131.42123848641722
+128.50715401000951
+126.5318287633781
+132.42516661171416
+129.2536803063485
+131.93677504319106
+125.83050026165675
+173.22567517283525
+277.35424487884666
+207.19232350941746
+204.27563635343614
+143.7440844498987
+150.70483656083766
+145.87417833112747
+190.9957396572195
+204.24574323103099
+160.02896172130264
+156.06914754463227
+137.03504249679838
+138.5808904852336
+227.88194055121357
+250.47171724605732
+207.51158941271257
+324.22645487171803
+328.7925076801918
+177.52895345955326
+298.28264210387397
+176.5104064355126
+158.30701183597859
+131.1946892528449
+132.04517339978605
+113.07478453640728
+116.37436390747283
+121.26708101852888
+126.69716990091605
+114.60080835615871
+115.01611494851193
+127.01008419244408
+199.93615676670373
+278.1224598787306
+206.48936766117055
+115.21305550563017
+111.66511720653399
+226.1854156392861
+230.7694639805426
+236.73939266614767
+105.8233768546375
+108.96305406752832
+116.28685526920437
+100.96239287145195
+105.75656374441792
+419.12741355948947
+972.8963642241725
+268.9402879655027
+629.9498394484898
+186.00421746810633
+161.92733326155226
+213.0474914392311
+956.3911075532483
+286.42251966297096
+934.7728033526901
+274.79161938004165
+296.7960735569876
+193.5518175719151
+221.68327383854893
+241.31413328788426
+158.70646817452382
+196.18833070157513
+111.0487632873666
+90.87142558413387
+90.80075282159515
+228.1970602654754
+177.42272454640047
+145.02819643238092
+90.32260963538347
+89.57296628576437
+80.61448406055611
+138.2645044460545
+112.82180164212893
+80.8694062329891
+78.86425279774637
+80.29053209630429
+78.92318819919888
+77.58188048994475
+77.21569051585854
+77.27992402801107
+76.06788456711014
+73.36941874782963
+75.94661396092152
+155.516455384202
+550.5940646704878
+310.1773038896155
+323.3200608764998
+129.22442484583573
+272.4147391770956
+542.4246218218435
+215.73482544256956
+315.1827916814096
+400.2342632808157
+83.32092700151564
+88.75267817529118
+136.04832803298785
+280.9024038879843
+87.26981948546799
+249.93659028637887
+112.78914793482849
+102.73537013433837
+86.39022502449788
+78.16423742496808
+75.51665367520135
+76.28393114196352
+79.79160206298647
+744.578666741894
+93.87506908966078
+409.5214490592267
+162.92377699403954
+85.07198117311695
+180.0677148122293
+118.72535401581636
+70.85977097671645
+63.46442570415724
+84.50430408349814
+65.33376987505504
+65.56199990063622
+71.22639788426373
+80.33842978044706
+91.40145357746817
+117.73746535959995
+65.70799887720622
+63.857539637570405
+84.99342494334867
+61.97642273085186
+60.384661950524894
+58.36869345476335
+
+</code></pre>
+<h4 id=Task_1\modelpy anchor=true>Task_1\modelpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">function_approximation</span>(<span class="hljs-params">nn.Module</span>):</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span>
+        <span class="hljs-built_in">super</span>(function_approximation, self).__init__()
+
+        self.linear1 = nn.Linear(in_features=<span class="hljs-number">2</span>, out_features=<span class="hljs-number">8</span>, bias=<span class="hljs-literal">True</span>)
+        self.linear2 = nn.Linear(in_features=<span class="hljs-number">8</span>, out_features=<span class="hljs-number">4</span>)
+        self.linear3 = nn.Linear(in_features=<span class="hljs-number">4</span>, out_features=<span class="hljs-number">1</span>)
+        self.tanh    = nn.Tanh()
+        self.softmax = nn.Softmax(dim=<span class="hljs-number">0</span>)
+
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span>(<span class="hljs-params">self, x</span>):</span>
+
+        x = self.tanh(self.linear1(x))
+        x = self.tanh(self.linear2(x))
+        x = self.linear3(x)
+
+        <span class="hljs-keyword">return</span> x
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span>():</span>
+    model = function_approximation()
+    <span class="hljs-built_in">input</span> = torch.Tensor([<span class="hljs-number">4.321097794848372</span>, <span class="hljs-number">4.769609253163742</span>])
+    out = model(<span class="hljs-built_in">input</span>)
+    
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">input</span>)
+    <span class="hljs-built_in">print</span>(model)
+    <span class="hljs-built_in">print</span>(out)
+
+<span class="hljs-comment">#test()</span>
+</code></pre>
+<h4 id=Task_1\plotpy anchor=true>Task_1\plotpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader
+<span class="hljs-keyword">from</span> dataset <span class="hljs-keyword">import</span> function_dataset
+<span class="hljs-keyword">from</span> model <span class="hljs-keyword">import</span> function_approximation
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> cm
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+
+df = pd.read_csv(<span class="hljs-string">&#x27;dataset/func_app1.csv&#x27;</span>)
+
+<span class="hljs-built_in">dir</span> = <span class="hljs-string">&quot;plots/&quot;</span>
+
+<span class="hljs-comment">#device = &#x27;cuda&#x27; if torch.cuda.is_available() else &#x27;cpu&#x27;</span>
+device = <span class="hljs-string">&#x27;cpu&#x27;</span>
+
+
+
+train_dataset = function_dataset(<span class="hljs-string">&quot;dataset/train.csv&quot;</span>)
+train_loader = DataLoader(train_dataset)
+
+test_dataset = function_dataset(<span class="hljs-string">&quot;dataset/test.csv&quot;</span>)
+test_loader = DataLoader(test_dataset)
+
+valid_dataset = function_dataset(<span class="hljs-string">&quot;dataset/validation.csv&quot;</span>)
+valid_loader = DataLoader(valid_dataset)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gen_plots</span>(<span class="hljs-params">model,epoch</span>):</span>
+    x1 = np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0.25</span>,dtype=<span class="hljs-string">&quot;float32&quot;</span>)
+    x2 = np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0.25</span>,dtype=<span class="hljs-string">&quot;float32&quot;</span>)
+    x1,x2 = np.meshgrid(x1,x2)
+
+    y = np.zeros(x1.shape)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(x1.shape[<span class="hljs-number">0</span>]):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(x1.shape[<span class="hljs-number">1</span>]):
+
+            output = model(torch.tensor([x1[i][j],x2[i][j]]))
+            y[i][j]= output
+    
+    f = plt.figure()
+    ax = plt.axes(projection=<span class="hljs-string">&#x27;3d&#x27;</span>)
+    surf = ax.plot_surface(x1, x2, y, cmap = cm.jet, linewidth=<span class="hljs-number">0</span>, antialiased=<span class="hljs-literal">False</span>)
+    f.colorbar(surf, shrink=<span class="hljs-number">0.5</span>, aspect=<span class="hljs-number">10</span>)
+    ax.set_title(<span class="hljs-string">f&#x27;Approximated Function after <span class="hljs-subst">{epoch}</span> Epochs&#x27;</span>)
+    ax.set_xlabel(<span class="hljs-string">&#x27;x1&#x27;</span>)
+    ax.set_ylabel(<span class="hljs-string">&#x27;x2&#x27;</span>)
+    plt.savefig(<span class="hljs-built_in">dir</span>+<span class="hljs-string">&#x27;epoch&#x27;</span>+<span class="hljs-string">f&#x27;<span class="hljs-subst">{epoch}</span>&#x27;</span>+<span class="hljs-string">&quot;_approximated.png&quot;</span>)
+    plt.show()
+
+
+<span class="hljs-comment"># Plot of loss variation with epoch</span>
+losses = []
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;losses.txt&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>) <span class="hljs-keyword">as</span> f:
+    lines = f.readlines()
+    <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> lines:
+        losses.append(<span class="hljs-built_in">float</span>(l.strip()))
+
+epochs = np.arange(<span class="hljs-number">1</span>,<span class="hljs-built_in">len</span>(losses)+<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+losses = np.array(losses)
+f = plt.figure()
+plt.title(<span class="hljs-string">&quot;Loss v/s Epoch&quot;</span>)
+plt.plot(epochs,losses)
+plt.xlabel(<span class="hljs-string">&#x27;Epochs&#x27;</span>)
+plt.ylabel(<span class="hljs-string">&#x27;Loss&#x27;</span>)
+plt.savefig(<span class="hljs-built_in">dir</span>+<span class="hljs-string">&quot;loss.png&quot;</span>)
+plt.show()
+plt.close(f)
+
+
+<span class="hljs-comment"># Scatter plot of desired output v/s approximated output</span>
+model = function_approximation().to(device=device)
+model.load_state_dict(torch.load(<span class="hljs-string">&#x27;model_weights.pth&#x27;</span>))
+
+desired =[]
+approximated = []
+
+
+<span class="hljs-keyword">for</span> batch_idx, (data, target) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(train_loader):
+        data = data.to(device=device)
+        target = target.to(device=device)
+
+        out = model(data.<span class="hljs-built_in">float</span>())
+       
+        approximated.append(out.item())
+        desired.append(target.item())
+desired = np.array(desired)
+approximated = np.array(approximated)
+
+
+f = plt.figure()
+plt.title(<span class="hljs-string">&quot;Desired v/s Approximated Scatter Plot&quot;</span>)
+plt.scatter(desired, approximated, c=<span class="hljs-string">&#x27;b&#x27;</span>, linewidths=<span class="hljs-number">1</span>)
+plt.plot(desired, desired, <span class="hljs-string">&#x27;r&#x27;</span>)
+plt.xlabel(<span class="hljs-string">&#x27;Desired Function&#x27;</span>)
+plt.ylabel(<span class="hljs-string">&#x27;Approximated Function&#x27;</span>)
+plt.savefig(<span class="hljs-built_in">dir</span>+<span class="hljs-string">&quot;scatter.png&quot;</span>)
+plt.show()
+plt.close(f)
+
+
+f = plt.figure()
+ax = plt.axes(projection=<span class="hljs-string">&#x27;3d&#x27;</span>)
+surf = ax.plot_trisurf(df.iloc[:,<span class="hljs-number">0</span>], df.iloc[:,<span class="hljs-number">1</span>], df.iloc[:,<span class="hljs-number">2</span>], cmap=cm.jet, linewidth=<span class="hljs-number">0</span>, antialiased=<span class="hljs-literal">False</span>)
+f.colorbar(surf, shrink=<span class="hljs-number">0.5</span>, aspect=<span class="hljs-number">10</span>)
+ax.set_title(<span class="hljs-string">f&#x27;Desired Function&#x27;</span>)
+ax.set_xlabel(<span class="hljs-string">&#x27;x1&#x27;</span>)
+ax.set_ylabel(<span class="hljs-string">&#x27;x2&#x27;</span>)
+ax.set_zlabel(<span class="hljs-string">&#x27;Desired Function&#x27;</span>)
+plt.savefig(<span class="hljs-built_in">dir</span>+<span class="hljs-string">&quot;desired.png&quot;</span>)
+plt.show()
+
+
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">10</span>,<span class="hljs-number">50</span>,<span class="hljs-number">350</span>]:
+    model = function_approximation().to(device)
+    model.load_state_dict(torch.load(<span class="hljs-string">f&quot;epoch<span class="hljs-subst">{<span class="hljs-built_in">str</span>(epoch)}</span>.pt&quot;</span>,map_location=device))
+    gen_plots(model,epoch)
+</code></pre>
+<h4 id=Task_1\READMEmd anchor=true>Task_1\READMEmd</h4>
+<p><a href="#Contents">to top</a></p>
+<h4 id=Task_1\trainpy anchor=true>Task_1\trainpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">from</span> torch.utils.data <span class="hljs-keyword">import</span> DataLoader
+<span class="hljs-keyword">import</span> torch.optim <span class="hljs-keyword">as</span> optim
+<span class="hljs-keyword">from</span> dataset <span class="hljs-keyword">import</span> function_dataset
+<span class="hljs-keyword">from</span> model <span class="hljs-keyword">import</span> function_approximation
+
+data_dir = <span class="hljs-string">&#x27;dataset/train.csv&#x27;</span>
+device = <span class="hljs-string">&#x27;cuda&#x27;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&#x27;cpu&#x27;</span>
+batch_size = <span class="hljs-number">1</span>
+learning_rate = <span class="hljs-number">2e-6</span>
+epochs = <span class="hljs-number">350</span>
+momentum = <span class="hljs-number">0.9</span>
+
+train_dataset = function_dataset(data_dir)
+train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=<span class="hljs-literal">True</span>)
+
+losses = []
+
+model = function_approximation().to(device=device)
+
+criterion = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum)
+
+
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(epochs):
+    total_loss = <span class="hljs-number">0</span>
+    cnt = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> batch_idx, (data, target) <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(train_loader):
+        data = data.to(device=device)
+        target = target.to(device=device)
+
+        out = model(data.<span class="hljs-built_in">float</span>())
+        loss = criterion(out, target.<span class="hljs-built_in">float</span>())
+        cnt+=<span class="hljs-number">1</span>
+        total_loss += loss.item() 
+
+        optimizer.zero_grad()
+        loss.backward()
+
+        optimizer.step()
+    losses.append(total_loss/cnt)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Epochs:<span class="hljs-subst">{epoch+<span class="hljs-number">1</span>}</span>, Loss:<span class="hljs-subst">{total_loss/cnt}</span>&#x27;</span>)
+    <span class="hljs-keyword">if</span>(epoch+<span class="hljs-number">1</span> == <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> epoch+<span class="hljs-number">1</span>==<span class="hljs-number">2</span> <span class="hljs-keyword">or</span> epoch+<span class="hljs-number">1</span>==<span class="hljs-number">10</span> <span class="hljs-keyword">or</span> epoch+<span class="hljs-number">1</span>==<span class="hljs-number">50</span> <span class="hljs-keyword">or</span> epoch+<span class="hljs-number">1</span>==epochs):
+        torch.save(model.state_dict(), <span class="hljs-string">&quot;epoch&quot;</span>+<span class="hljs-built_in">str</span>(epoch+<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;.pt&quot;</span>)
+
+<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;losses.txt&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> f:
+    <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> losses:
+        f.write(<span class="hljs-built_in">str</span>(l)+<span class="hljs-string">&quot;\n&quot;</span>)
+torch.save(model.state_dict(), <span class="hljs-string">&#x27;model_weights.pth&#x27;</span>)
+</code></pre>
+<h4 id=Task_1\untitledhtml anchor=true>Task_1\untitledhtml</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-comment">&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="hljs-comment">&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="hljs-comment">&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;</span>
+<span class="hljs-comment">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;no-js&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--&lt;![endif]--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Place favicon.ico and apple-touch-icon.png in the root directory --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+            
+        <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/normalize.css&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/main.css&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/github-min.css&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/css/vs.css&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/vendor/modernizr-2.6.2.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!--[if lt IE 7]&gt;
+            &lt;p class=&quot;browsehappy&quot;&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href=&quot;http://browsehappy.com/&quot;&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;
+        &lt;![endif]--&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- Add your site or application content here --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;markdown-body&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">.</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">Contents</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>Contents<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>  / <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>      /<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">dataset</span>\<span class="hljs-attr">dataset_splitpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#dataset\dataset_splitpy&quot;</span>&gt;</span>        |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">dataset</span>\<span class="hljs-attr">readmetxt</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#dataset\readmetxt&quot;</span>&gt;</span>        |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">datasetpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#datasetpy&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">evalpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#evalpy&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">lossestxt</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#lossestxt&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">modelpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#modelpy&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">plotpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#plotpy&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>  / <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>      /<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">READMEmd</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#READMEmd&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;|-</span> ](#<span class="hljs-attr">trainpy</span>) <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#trainpy&quot;</span>&gt;</span>    |- <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>  / <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>      /<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">dataset\dataset_splitpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>dataset\dataset_splitpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span>lines = []
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> random
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>func_app1.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>r<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    lines = f.readlines()
+random.shuffle(lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:])
+train_lines = lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>351<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+valid_lines = lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>351<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>401<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+test_lines = lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>401<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>501<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>train.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>w<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    f.write(lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>])
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> line <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> train_lines:
+        f.write(line)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>validation.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>w<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    f.write(lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>])
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> line <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> valid_lines:
+        f.write(line)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>test.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>w<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    f.write(lines[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>])
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> line <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> test_lines:
+        f.write(line)
+
+
+
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">dataset\readmetxt</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>dataset\readmetxt<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-plaintext&quot;</span>&gt;</span>Instructions:
+1. The dataset consist of 2 attributes (features ) and 1 Target variable (<span class="hljs-symbol">&amp;#x27;</span>y<span class="hljs-symbol">&amp;#x27;</span> coloumn)
+2. Use 70:10:20 ratio for dividing dataset into Training, Validation and Test datasets,
+respectively
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">datasetpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>datasetpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.utils.data <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Dataset
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> pandas <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> pd
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> numpy <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> np
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-class&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>class<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>function_dataset<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>Dataset<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>__init__<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>self, data_dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        self.data_dir = data_dir
+        data = np.array(pd.read_csv(self.data_dir))
+        self.input_features = data[:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+        self.target = data[:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>:]
+        self.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>len<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> = data.shape[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>__len__<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>self<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>return<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> self.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>len<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>__getitem__<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>self, index<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        features_index = torch.from_numpy(self.input_features[index])
+        target_index = torch.from_numpy(self.target[index])
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>return<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> (features_index, target_index)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>():<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    train_dataset = function_dataset(data_dir=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>dataset/func_app1.csv<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    train_data, train_label = train_dataset[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># print(train_data)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># print(train_label)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># print(train_data.shape)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># print(train_label.shape)<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(train_dataset[:][<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>][:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>].shape)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span>#test()<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">evalpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>evalpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.nn <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> nn
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.utils.data <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> DataLoader
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> model <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_approximation
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> dataset <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_dataset
+
+device = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>cuda<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>if<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.cuda.is_available() <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>else<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>cpu<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+model = function_approximation().to(device=device)
+model.load_state_dict(torch.load(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>model_weights.pth<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>))
+
+train_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/train.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+train_loader = DataLoader(train_dataset)
+
+test_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/test.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+test_loader = DataLoader(test_dataset)
+
+valid_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/validation.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+valid_loader = DataLoader(valid_dataset)
+
+
+criterion = nn.MSELoss()
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>accuracy<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>loader, model<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    
+    
+    avg_loss = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 
+    cnt=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.no_grad():
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> data, target <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> loader:
+            model.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>eval<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>()
+            data = data.to(device=device)
+            target = target.to(device=device)
+
+            out = model(data.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>())
+
+            loss = criterion(out,target.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>())
+            avg_loss += loss
+            cnt+=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        avg_loss = avg_loss/cnt
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;quot;</span>Average loss is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{avg_loss:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>.2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>f}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>--------------------------------------------------------------------------------<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+
+   
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>Train Set metrics:<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+accuracy(train_loader, model)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>Test Set metrics:<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+accuracy(test_loader, model)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>Validation Set metrics:<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+accuracy(valid_loader, model)
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">lossestxt</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>lossestxt<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-plaintext&quot;</span>&gt;</span>6469.233530050202
+6190.931101790555
+5883.22599173581
+5596.877008840678
+5337.303012900877
+5096.645053030872
+4876.540628889288
+4673.263784016394
+4485.531428102436
+4309.3988879548915
+4146.353220651711
+3987.0031177775136
+3829.516704134464
+3681.123870719509
+3543.9201794371556
+3414.6851106210383
+3292.636105643788
+3177.647691678764
+3070.4610155878922
+2965.9298754088622
+2867.3601155916936
+2774.498478832328
+2694.177996311005
+2603.387308492378
+2521.0982459011652
+2443.337388478182
+2370.8838215730025
+2301.8711545321453
+2233.7373368663734
+2169.3944282997318
+2109.1946789035437
+2055.541573732963
+1993.0167484983224
+1939.5745421948652
+1887.184776655118
+1839.7134871945689
+1785.318972255158
+1737.802955423762
+1691.9880374301924
+1646.6264398705248
+1604.67657918612
+1566.084742159608
+1524.8917141796614
+1488.1353378386689
+1454.472732475005
+1416.0973937901178
+1379.5000886839684
+1348.252545587967
+1324.3628492451364
+1284.7427391913982
+1253.8237684101775
+1225.3391876584703
+1203.5136340186652
+1177.3216696710303
+1144.1754839857508
+1119.3987015357463
+1094.4178529508288
+1080.496984217206
+1054.4650020251358
+1039.2800346874399
+1008.5285836884219
+983.8163497786051
+963.5718603893727
+949.1739639355894
+934.6580486254738
+906.531217941231
+906.1871261906234
+879.6276484871689
+852.9956915393046
+841.1800919978019
+851.3361614483795
+815.4862426631918
+799.9278602590776
+824.6835416326386
+781.6744935905969
+744.2075442716854
+730.5548405038672
+720.7871221927024
+859.9738975777743
+710.416381145996
+683.6388357776245
+671.8157706602475
+724.0333896776158
+750.6614222393445
+638.974825054208
+632.4284063589039
+649.1066230627798
+628.7419264671827
+620.1735607577032
+594.3411663187208
+582.6449460217982
+936.8774392072994
+582.7242108148364
+560.0279573015257
+546.6501516908451
+568.5797725175678
+535.9544544666265
+523.5648404347055
+603.1952533671371
+512.3436884481064
+543.158250819989
+494.1990198272382
+480.4194119944332
+479.88865784242785
+466.2169628430863
+460.3482845102381
+466.6578712346125
+447.8757596784238
+440.71759898287075
+507.3802223878073
+493.0428776469179
+459.53285687603557
+421.46058339041474
+493.49286679696957
+413.3387188066945
+455.0380167517763
+394.3975249900304
+405.37982813770515
+405.66303317930965
+375.8381339023152
+390.4244968779601
+560.762610918345
+393.2744989159251
+361.28605227674234
+416.46362678989567
+850.2836444338354
+722.6960697442653
+378.3849656136611
+441.43901904530424
+571.639129097281
+446.9788434070125
+355.9731980279119
+336.6434778124963
+502.03261507384263
+466.89262110671535
+324.4460891909006
+330.60122164947074
+319.20683654695483
+330.96140365741724
+315.07652046248995
+295.16431202245724
+301.55329312171267
+314.59093438132027
+283.69389822118467
+289.13743150582343
+285.4178505116549
+282.6222133276099
+266.80732124255474
+267.6780870162178
+291.72752652252063
+301.0820093975442
+255.27581384248523
+259.9788112715606
+248.1678358188691
+247.82576465584404
+249.85177773775953
+238.83690804060333
+237.84376075852978
+234.83010477759734
+232.88150086698778
+241.4665825629562
+238.91304998723575
+257.20470013668717
+372.62203589990287
+493.4555190832264
+393.2878895050876
+385.1773704841462
+233.59242927069576
+254.4670273237044
+245.38136153316134
+255.1130062484342
+492.55430691985447
+233.57857808862107
+253.35092944511345
+389.3625830391222
+216.27789609335517
+208.30248116201605
+211.16262579406316
+207.89040443449701
+206.84850883944466
+198.50431550655787
+194.45448658280532
+198.5994727563047
+198.29875357995692
+198.07632111843012
+183.3659305442837
+186.22883623649508
+182.5515711999644
+180.4360689515514
+187.28112202723494
+181.74815717757193
+175.8808969745796
+186.7982012160036
+175.13045971957473
+181.03019590565518
+164.97966405628136
+181.23077370730704
+164.31702040442548
+210.1360731847967
+166.073794739594
+172.76358136821835
+158.82834603458153
+154.05531820874063
+153.21897153900238
+146.94612490718507
+150.756915951739
+149.56644956118734
+141.00414647304362
+138.33387086464742
+139.9994198225728
+136.26295039148678
+173.0235070137456
+138.81065704789154
+145.9764013452654
+192.2916841295122
+146.28494609055886
+131.42123848641722
+128.50715401000951
+126.5318287633781
+132.42516661171416
+129.2536803063485
+131.93677504319106
+125.83050026165675
+173.22567517283525
+277.35424487884666
+207.19232350941746
+204.27563635343614
+143.7440844498987
+150.70483656083766
+145.87417833112747
+190.9957396572195
+204.24574323103099
+160.02896172130264
+156.06914754463227
+137.03504249679838
+138.5808904852336
+227.88194055121357
+250.47171724605732
+207.51158941271257
+324.22645487171803
+328.7925076801918
+177.52895345955326
+298.28264210387397
+176.5104064355126
+158.30701183597859
+131.1946892528449
+132.04517339978605
+113.07478453640728
+116.37436390747283
+121.26708101852888
+126.69716990091605
+114.60080835615871
+115.01611494851193
+127.01008419244408
+199.93615676670373
+278.1224598787306
+206.48936766117055
+115.21305550563017
+111.66511720653399
+226.1854156392861
+230.7694639805426
+236.73939266614767
+105.8233768546375
+108.96305406752832
+116.28685526920437
+100.96239287145195
+105.75656374441792
+419.12741355948947
+972.8963642241725
+268.9402879655027
+629.9498394484898
+186.00421746810633
+161.92733326155226
+213.0474914392311
+956.3911075532483
+286.42251966297096
+934.7728033526901
+274.79161938004165
+296.7960735569876
+193.5518175719151
+221.68327383854893
+241.31413328788426
+158.70646817452382
+196.18833070157513
+111.0487632873666
+90.87142558413387
+90.80075282159515
+228.1970602654754
+177.42272454640047
+145.02819643238092
+90.32260963538347
+89.57296628576437
+80.61448406055611
+138.2645044460545
+112.82180164212893
+80.8694062329891
+78.86425279774637
+80.29053209630429
+78.92318819919888
+77.58188048994475
+77.21569051585854
+77.27992402801107
+76.06788456711014
+73.36941874782963
+75.94661396092152
+155.516455384202
+550.5940646704878
+310.1773038896155
+323.3200608764998
+129.22442484583573
+272.4147391770956
+542.4246218218435
+215.73482544256956
+315.1827916814096
+400.2342632808157
+83.32092700151564
+88.75267817529118
+136.04832803298785
+280.9024038879843
+87.26981948546799
+249.93659028637887
+112.78914793482849
+102.73537013433837
+86.39022502449788
+78.16423742496808
+75.51665367520135
+76.28393114196352
+79.79160206298647
+744.578666741894
+93.87506908966078
+409.5214490592267
+162.92377699403954
+85.07198117311695
+180.0677148122293
+118.72535401581636
+70.85977097671645
+63.46442570415724
+84.50430408349814
+65.33376987505504
+65.56199990063622
+71.22639788426373
+80.33842978044706
+91.40145357746817
+117.73746535959995
+65.70799887720622
+63.857539637570405
+84.99342494334867
+61.97642273085186
+60.384661950524894
+58.36869345476335
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">modelpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>modelpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.nn <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> nn
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.nn.functional <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> F
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-class&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>class<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>function_approximation<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>nn.Module<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>__init__<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>self<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>super<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(function_approximation, self).__init__()
+
+        self.linear1 = nn.Linear(in_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, out_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, bias=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-literal&quot;</span>&gt;</span>True<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+        self.linear2 = nn.Linear(in_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, out_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+        self.linear3 = nn.Linear(in_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, out_features=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+        self.tanh    = nn.Tanh()
+        self.softmax = nn.Softmax(dim=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>forward<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>self, x<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+        x = self.tanh(self.linear1(x))
+        x = self.tanh(self.linear2(x))
+        x = self.linear3(x)
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>return<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> x
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>():<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    model = function_approximation()
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>input<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> = torch.Tensor([<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>4.321097794848372<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>4.769609253163742<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>])
+    out = model(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>input<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>input<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(model)
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(out)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span>#test()<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">plotpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>plotpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.nn <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> nn
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.utils.data <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> DataLoader
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> dataset <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_dataset
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> model <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_approximation
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> numpy <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> np
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> matplotlib.pyplot <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> plt
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> matplotlib <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> cm
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> pandas <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> pd
+
+df = pd.read_csv(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>dataset/func_app1.csv<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>plots/<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span>#device = <span class="hljs-symbol">&amp;#x27;</span>cuda<span class="hljs-symbol">&amp;#x27;</span> if torch.cuda.is_available() else <span class="hljs-symbol">&amp;#x27;</span>cpu<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+device = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>cpu<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+
+
+train_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/train.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+train_loader = DataLoader(train_dataset)
+
+test_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/test.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+test_loader = DataLoader(test_dataset)
+
+valid_dataset = function_dataset(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>dataset/validation.csv<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+valid_loader = DataLoader(valid_dataset)
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-function&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>def<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-title&quot;</span>&gt;</span>gen_plots<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-params&quot;</span>&gt;</span>model,epoch<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>):<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    x1 = np.arange(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0.25<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,dtype=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>float32<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    x2 = np.arange(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0.25<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,dtype=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>float32<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    x1,x2 = np.meshgrid(x1,x2)
+
+    y = np.zeros(x1.shape)
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> i <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>range<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(x1.shape[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]):
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> j <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>range<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(x1.shape[<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]):
+
+            output = model(torch.tensor([x1[i][j],x2[i][j]]))
+            y[i][j]= output
+    
+    f = plt.figure()
+    ax = plt.axes(projection=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>3d<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    surf = ax.plot_surface(x1, x2, y, cmap = cm.jet, linewidth=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, antialiased=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-literal&quot;</span>&gt;</span>False<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    f.colorbar(surf, shrink=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0.5<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, aspect=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    ax.set_title(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;#x27;</span>Approximated Function after <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{epoch}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Epochs<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    ax.set_xlabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>x1<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    ax.set_ylabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>x2<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    plt.savefig(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>epoch<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{epoch}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>_approximated.png<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    plt.show()
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># Plot of loss variation with epoch<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+losses = []
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>losses.txt<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>r<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    lines = f.readlines()
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> l <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> lines:
+        losses.append(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(l.strip()))
+
+epochs = np.arange(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>len<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(losses)+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+losses = np.array(losses)
+f = plt.figure()
+plt.title(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>Loss v/s Epoch<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.plot(epochs,losses)
+plt.xlabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>Epochs<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.ylabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>Loss<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.savefig(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>loss.png<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.show()
+plt.close(f)
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;</span># Scatter plot of desired output v/s approximated output<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+model = function_approximation().to(device=device)
+model.load_state_dict(torch.load(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>model_weights.pth<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>))
+
+desired =[]
+approximated = []
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> batch_idx, (data, target) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>enumerate<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(train_loader):
+        data = data.to(device=device)
+        target = target.to(device=device)
+
+        out = model(data.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>())
+       
+        approximated.append(out.item())
+        desired.append(target.item())
+desired = np.array(desired)
+approximated = np.array(approximated)
+
+
+f = plt.figure()
+plt.title(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>Desired v/s Approximated Scatter Plot<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.scatter(desired, approximated, c=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>b<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, linewidths=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.plot(desired, desired, <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>r<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.xlabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>Desired Function<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.ylabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>Approximated Function<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.savefig(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>scatter.png<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.show()
+plt.close(f)
+
+
+f = plt.figure()
+ax = plt.axes(projection=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>3d<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+surf = ax.plot_trisurf(df.iloc[:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>], df.iloc[:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>], df.iloc[:,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>], cmap=cm.jet, linewidth=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, antialiased=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-literal&quot;</span>&gt;</span>False<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+f.colorbar(surf, shrink=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0.5<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, aspect=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+ax.set_title(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;#x27;</span>Desired Function<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+ax.set_xlabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>x1<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+ax.set_ylabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>x2<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+ax.set_zlabel(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>Desired Function<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.savefig(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>dir<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>desired.png<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+plt.show()
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> [<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>350<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>]:
+    model = function_approximation().to(device)
+    model.load_state_dict(torch.load(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;quot;</span>epoch<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>str<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(epoch)}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.pt<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,map_location=device))
+    gen_plots(model,epoch)
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">READMEmd</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>READMEmd<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">id</span>=<span class="hljs-string">trainpy</span> <span class="hljs-attr">anchor</span>=<span class="hljs-string">true</span>&gt;</span>trainpy<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#Contents&quot;</span>&gt;</span>to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;language-python&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.nn <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> nn
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.utils.data <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> DataLoader
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.optim <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> optim
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> dataset <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_dataset
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>from<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> model <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> function_approximation
+
+data_dir = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>dataset/train.csv<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+device = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>cuda<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>if<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> torch.cuda.is_available() <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>else<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>cpu<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+batch_size = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+learning_rate = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2e-6<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+epochs = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>350<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+momentum = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0.9<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+train_dataset = function_dataset(data_dir)
+train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-literal&quot;</span>&gt;</span>True<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+
+losses = []
+
+model = function_approximation().to(device=device)
+
+criterion = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum)
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>range<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(epochs):
+    total_loss = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    cnt = <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> batch_idx, (data, target) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>enumerate<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(train_loader):
+        data = data.to(device=device)
+        target = target.to(device=device)
+
+        out = model(data.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>())
+        loss = criterion(out, target.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>float<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>())
+        cnt+=<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        total_loss += loss.item() 
+
+        optimizer.zero_grad()
+        loss.backward()
+
+        optimizer.step()
+    losses.append(total_loss/cnt)
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>print<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span>f<span class="hljs-symbol">&amp;#x27;</span>Epochs:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>, Loss:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-subst&quot;</span>&gt;</span>{total_loss/cnt}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>if<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> == <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>or<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>==<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>or<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>==<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>or<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>==<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>50<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>or<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>==epochs):
+        torch.save(model.state_dict(), <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>epoch<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>str<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(epoch+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-number&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>.pt<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>with<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>open<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>losses.txt<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>,<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>w<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>) <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>as<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> f:
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>for<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> l <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;</span>in<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> losses:
+        f.write(<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-built_in&quot;</span>&gt;</span>str<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>(l)+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;quot;</span>\n<span class="hljs-symbol">&amp;quot;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+torch.save(model.state_dict(), <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hljs-string&quot;</span>&gt;</span><span class="hljs-symbol">&amp;#x27;</span>model_weights.pth<span class="hljs-symbol">&amp;#x27;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>)
+<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+
+            
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/vendor/jquery-1.10.2.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/plugins.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/main.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+<h4 id=Task_2a\plots\gen_latexpy anchor=true>Task_2a\plots\gen_latexpy</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getsubString</span>(<span class="hljs-params">name</span>):</span>
+    stri=<span class="hljs-string">&quot;\\newpage\n&quot;</span>
+    stri+= <span class="hljs-string">f&quot;\\subsection{{&quot;</span>+name +<span class="hljs-string">f&quot;}}\n&quot;</span>
+    <span class="hljs-keyword">return</span> stri
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getImageString</span>(<span class="hljs-params">filename,caption,scale</span>):</span>
+    stri = <span class="hljs-string">f&quot;\\begin{{subfigure}}{{.5\\textwidth}}\n&quot;</span>
+    stri+= <span class="hljs-string">&quot;\\centering\n&quot;</span>
+    <span class="hljs-comment">#stri+= &quot;\\includegraphics[scale = &quot;+str(scale)+f&quot;]{{&quot;+filename +f&quot;}}\n&quot;</span>
+    stri += <span class="hljs-string">&quot;\includegraphics[width=1.2\\textwidth,height=1.2\\textheight,keepaspectratio]{&quot;</span> + filename+ <span class="hljs-string">&quot;}&quot;</span>
+    stri+= <span class="hljs-string">f&quot;\\caption{{&quot;</span> + caption +<span class="hljs-string">f&quot;}}\n&quot;</span>
+
+    stri += <span class="hljs-string">f&quot;\\end{{subfigure}}\n&quot;</span>
+
+    
+    <span class="hljs-keyword">return</span> stri
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getImageString2</span>(<span class="hljs-params">filename,caption,scale</span>):</span>
+    
+    stri = <span class="hljs-string">f&quot;\\begin{{figure}}[H]\n&quot;</span>
+    stri+= <span class="hljs-string">f&quot;\\caption{{&quot;</span> + caption +<span class="hljs-string">f&quot;}}\n&quot;</span>
+    <span class="hljs-comment">#stri+= &quot;\\centering\n&quot;</span>
+    stri+= <span class="hljs-string">&quot;\\includegraphics[scale = &quot;</span>+<span class="hljs-built_in">str</span>(scale)+<span class="hljs-string">f&quot;,left]{{&quot;</span>+filename +<span class="hljs-string">f&quot;}}\n&quot;</span>
+    stri += <span class="hljs-string">f&quot;\\end{{figure}}\n&quot;</span>
+    <span class="hljs-keyword">return</span> stri
+
+epochs = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">10</span>,<span class="hljs-number">50</span>,<span class="hljs-number">360</span>]
+latex = <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-keyword">for</span> epoch <span class="hljs-keyword">in</span> epochs:
+    latex += <span class="hljs-string">f&quot;\\begin{{figure}}[H]\n&quot;</span>  
+
+    <span class="hljs-comment">#latex+=getsubString(f&quot;Epoch {epoch}&quot;)</span>
+    <span class="hljs-keyword">for</span> layer <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]:
+        nodes = []
+        <span class="hljs-keyword">if</span> (layer == <span class="hljs-number">1</span>):
+            nodes = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]
+        <span class="hljs-keyword">else</span>:
+            nodes = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]
+        <span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> nodes:
+            fname = <span class="hljs-string">f&quot;task2a/epoch<span class="hljs-subst">{<span class="hljs-built_in">str</span>(epoch)}</span>_hl<span class="hljs-subst">{<span class="hljs-built_in">str</span>(layer)}</span><span class="hljs-subst">{<span class="hljs-built_in">str</span>(node)}</span>.png&quot;</span>
+            latex+=getImageString(fname,<span class="hljs-string">f&quot;Plot for Hidden Layer <span class="hljs-subst">{layer}</span>, Node <span class="hljs-subst">{node}</span> (epoch: <span class="hljs-subst">{epoch}</span>)&quot;</span>,<span class="hljs-number">0.7</span>)
+    fname = <span class="hljs-string">f&quot;task2a/epoch<span class="hljs-subst">{<span class="hljs-built_in">str</span>(epoch)}</span>_output.png&quot;</span>
+    latex+=<span class="hljs-string">&quot;\\pagebreak&quot;</span>
+    latex += <span class="hljs-string">f&quot;\\end{{figure}}\n&quot;</span>
+    
+    latex+=getImageString2(fname,<span class="hljs-string">f&quot;Plot for Output Layer  (epoch: <span class="hljs-subst">{epoch}</span>)&quot;</span>,<span class="hljs-number">1.3</span>)
+    latex+=<span class="hljs-string">&quot;\\pagebreak&quot;</span>
+<span class="hljs-built_in">print</span>(latex)
+    
+</code></pre>
+<h4 id=Task_2a\plots\latextxt anchor=true>Task_2a\plots\latextxt</h4>
+<p><a href="#Contents">to top</a></p>
+<pre><code class="language-plaintext">��\ b e g i n { f i g u r e } [ H ]  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 1 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   1   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 1 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   2   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 1 3 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   3   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 1 4 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   4   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 2 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   1   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 _ h l 2 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   2   ( e p o c h :   1 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ p a g e b r e a k \ e n d { f i g u r e }  
+ \ b e g i n { f i g u r e } [ H ]  
+ \ c a p t i o n { P l o t   f o r   O u t p u t   L a y e r     ( e p o c h :   1 ) }  
+ \ i n c l u d e g r a p h i c s [ s c a l e   =   1 . 3 , l e f t ] { t a s k 2 a / e p o c h 1 _ o u t p u t . p n g }  
+ \ e n d { f i g u r e }  
+ \ p a g e b r e a k \ b e g i n { f i g u r e } [ H ]  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 1 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   1   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 1 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   2   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 1 3 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   3   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 1 4 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   4   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 2 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   1   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 2 _ h l 2 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   2   ( e p o c h :   2 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ p a g e b r e a k \ e n d { f i g u r e }  
+ \ b e g i n { f i g u r e } [ H ]  
+ \ c a p t i o n { P l o t   f o r   O u t p u t   L a y e r     ( e p o c h :   2 ) }  
+ \ i n c l u d e g r a p h i c s [ s c a l e   =   1 . 3 , l e f t ] { t a s k 2 a / e p o c h 2 _ o u t p u t . p n g }  
+ \ e n d { f i g u r e }  
+ \ p a g e b r e a k \ b e g i n { f i g u r e } [ H ]  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 1 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   1   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 1 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   2   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 1 3 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   3   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 1 4 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   4   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 2 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   1   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 1 0 _ h l 2 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   2   ( e p o c h :   1 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ p a g e b r e a k \ e n d { f i g u r e }  
+ \ b e g i n { f i g u r e } [ H ]  
+ \ c a p t i o n { P l o t   f o r   O u t p u t   L a y e r     ( e p o c h :   1 0 ) }  
+ \ i n c l u d e g r a p h i c s [ s c a l e   =   1 . 3 , l e f t ] { t a s k 2 a / e p o c h 1 0 _ o u t p u t . p n g }  
+ \ e n d { f i g u r e }  
+ \ p a g e b r e a k \ b e g i n { f i g u r e } [ H ]  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 1 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   1   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 1 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   2   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 1 3 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   3   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 1 4 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   4   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 2 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   1   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 5 0 _ h l 2 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   2   ( e p o c h :   5 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ p a g e b r e a k \ e n d { f i g u r e }  
+ \ b e g i n { f i g u r e } [ H ]  
+ \ c a p t i o n { P l o t   f o r   O u t p u t   L a y e r     ( e p o c h :   5 0 ) }  
+ \ i n c l u d e g r a p h i c s [ s c a l e   =   1 . 3 , l e f t ] { t a s k 2 a / e p o c h 5 0 _ o u t p u t . p n g }  
+ \ e n d { f i g u r e }  
+ \ p a g e b r e a k \ b e g i n { f i g u r e } [ H ]  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 1 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   1   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 1 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   2   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 1 3 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   3   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 1 4 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   1 ,   N o d e   4   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 2 1 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   1   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ b e g i n { s u b f i g u r e } { . 5 \ t e x t w i d t h }  
+ \ c e n t e r i n g  
+ \ i n c l u d e g r a p h i c s [ w i d t h = 1 . 2 \ t e x t w i d t h , h e i g h t = 1 . 2 \ t e x t h e i g h t , k e e p a s p e c t r a t i o ] { t a s k 2 a / e p o c h 3 6 0 _ h l 2 2 . p n g } \ c a p t i o n { P l o t   f o r   H i d d e n   L a y e r   2 ,   N o d e   2   ( e p o c h :   3 6 0 ) }  
+ \ e n d { s u b f i g u r e }  
+ \ p a g e b r e a k \ e n d { f i g u r e }  
+ \ b e g i n { f i g u r e } [ H ]  
+ \ c a p t i o n { P l o t   f o r   O u t p u t   L a y e r     ( e p o c h :   3 6 0 ) }  
+ \ i n c l u d e g r a p h i c s [ s c a l e   =   1 . 3 , l e f t ] { t a s k 2 a / e p o c h 3 6 0 _ o u t p u t . p n g }  
+ \ e n d { f i g u r e }  
+ \ p a g e b r e a k  
+ 
+</code></pre>
+<h4 id=Task_2a\READMEmd anchor=true>Task_2a\READMEmd</h4>
+<p><a href="#Contents">to top</a></p>
+<h4 id=Task_2b\READMEmd anchor=true>Task_2b\READMEmd</h4>
+<p><a href="#Contents">to top</a></p>
+</article>
+
+            
+        <script src="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/plugins.js"></script>
+        <script src="file://C:\Users\Akshat Joshi\AppData\Roaming\npm\node_modules\repo-to-pdf\html5bp/js/main.js"></script>
+    </body>
+</html>
+ </body>
+    </html>
